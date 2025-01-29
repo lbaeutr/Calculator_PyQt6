@@ -40,7 +40,7 @@ Este proyecto es una calculadora gráfica desarrollada con PyQt6. La calculadora
 
 ## Capturas de Pantalla
 
-![Captura de Pantalla](ruta/a/la/captura.png)
+![Captura de Pantalla](/resources/capture.png)
 
 ## Contribuciones
 
