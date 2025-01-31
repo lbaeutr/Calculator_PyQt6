@@ -1111,6 +1111,37 @@ QPushButton#btn_mini:hover {
      <string>_</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label_titulo">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel#label_titulo {
+    font-size: 24px;  /* Tamaño del texto */
+    font-weight: bold;  /* Negrita */
+    color: white;  /* Color del texto */
+    background-color: transparent;  /* Sin fondo */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Calculadora</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>

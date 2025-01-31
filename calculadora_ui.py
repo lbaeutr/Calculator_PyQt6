@@ -15,9 +15,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QGridLayout, QHeaderView, QLineEdit,
-    QMainWindow, QPushButton, QSizePolicy, QTableWidget,
-    QTableWidgetItem, QWidget)
+from PySide6.QtWidgets import (QApplication, QGridLayout, QHeaderView, QLabel,
+    QLineEdit, QMainWindow, QPushButton, QSizePolicy,
+    QTableWidget, QTableWidgetItem, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -891,6 +891,18 @@ class Ui_MainWindow(object):
 "    color: #A0A0A0;  /* Gris claro al pasar el mouse */\n"
 "}\n"
 "")
+        self.label_titulo = QLabel(self.centralwidget)
+        self.label_titulo.setObjectName(u"label_titulo")
+        self.label_titulo.setGeometry(QRect(0, 0, 141, 31))
+        self.label_titulo.setFont(font2)
+        self.label_titulo.setStyleSheet(u"QLabel#label_titulo {\n"
+"    font-size: 24px;  /* Tama\u00f1o del texto */\n"
+"    font-weight: bold;  /* Negrita */\n"
+"    color: white;  /* Color del texto */\n"
+"    background-color: transparent;  /* Sin fondo */\n"
+"}\n"
+"")
+        self.label_titulo.setAlignment(Qt.AlignmentFlag.AlignCenter)
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -927,5 +939,6 @@ class Ui_MainWindow(object):
         self.btn_clear_history.setText("")
         self.btn_close.setText(QCoreApplication.translate("MainWindow", u"X", None))
         self.btn_mini.setText(QCoreApplication.translate("MainWindow", u"_", None))
+        self.label_titulo.setText(QCoreApplication.translate("MainWindow", u"Calculadora", None))
     # retranslateUi
 

@@ -63,12 +63,10 @@ class pantalla(QMainWindow):
     def add_to_history(self, operation, result):
         row_position = self.table_history.rowCount()
         self.table_history.insertRow(row_position)
-        #self.table_history.setItem(row_position, 0, QTableWidgetItem(str(self.id_operacion)))
-        #self.table_history.setItem(row_position, 1, QTableWidgetItem(operation))
-        #self.table_history.setItem(row_position, 2, QTableWidgetItem(str(result)))
+        self.table_history.setItem(row_position, 0, QTableWidgetItem(str(self.id_operacion)))
         self.table_history.setItem(row_position, 1, QTableWidgetItem(operation))
         self.table_history.setItem(row_position, 2, QTableWidgetItem(str(result)))
-        self.table_history.setItem(row_position, 0, QTableWidgetItem(str(self.id_operacion)))
+        
         
        
         self.id_operacion += 1
