@@ -27,7 +27,6 @@ Este proyecto es una calculadora gráfica desarrollada con PyQt6. La calculadora
 
 - [main.py](http://_vscodecontentref_/2): Contiene la lógica principal de la calculadora.
 - [calculadora.ui](http://_vscodecontentref_/3): Archivo de diseño de la interfaz gráfica creado con Qt Designer.
-- [README.md](http://_vscodecontentref_/4): Este archivo, contiene información sobre el proyecto.
 
 ## Funcionalidades
 
@@ -36,16 +35,12 @@ Este proyecto es una calculadora gráfica desarrollada con PyQt6. La calculadora
 - **Botón de Igual**: Calcula el resultado de la operación ingresada.
 - **Botón de Borrar Último Número**: Elimina el último carácter ingresado.
 - **Botón de Limpiar**: Limpia toda la pantalla de la calculadora.
+- **Botón de Borrar Historial**: Borra todo el historial de operaciones.
 - **Historial**: Muestra un historial de las operaciones realizadas.
+- **Botón de Cerrar**: Cierra la aplicación.
+- **Botón de Minimizar**: Minimiza la ventana de la aplicación.
 
 ## Capturas de Pantalla
 
 ![Captura de Pantalla](/resources/capture.png)
 
-## Contribuciones
-
-Las contribuciones son bienvenidas. Por favor, abre un issue o un pull request para discutir cualquier cambio que desees realizar.
-
-## Licencia
-
-Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.
