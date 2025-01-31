@@ -27,6 +27,7 @@ class pantalla(QMainWindow):
         self.btn_igual.clicked.connect(self.calculate)
         self.btn_borrar_ultimo_numero.clicked.connect(self.delete_last_character)
         self.btn_clear.clicked.connect(self.clear_display)
+        self.btn_clear_history.clicked.connect(self.clear_history)
 
 
     def add_to_display(self, text):
@@ -65,8 +66,13 @@ class pantalla(QMainWindow):
         self.table_history.setItem(row_position, 1, QTableWidgetItem(operation))
         self.table_history.setItem(row_position, 2, QTableWidgetItem(str(result)))
         self.table_history.setItem(row_position, 0, QTableWidgetItem(str(self.id_operacion)))
+        
        
         self.id_operacion += 1
+
+    def clear_history(self):
+        self.table_history.setRowCount(0)
+        self.id_operacion = 1
 
     def show_error(self, message):
         msg = QMessageBox()

@@ -23,7 +23,9 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(801, 501)
+        MainWindow.resize(800, 501)
+        MainWindow.setMinimumSize(QSize(800, 501))
+        MainWindow.setMaximumSize(QSize(800, 502))
         font = QFont()
         font.setPointSize(20)
         MainWindow.setFont(font)
@@ -59,7 +61,7 @@ class Ui_MainWindow(object):
         self.table_history.setHorizontalHeaderItem(2, __qtablewidgetitem2)
         self.table_history.setObjectName(u"table_history")
         self.table_history.setEnabled(True)
-        self.table_history.setGeometry(QRect(450, 20, 341, 471))
+        self.table_history.setGeometry(QRect(450, 40, 341, 431))
         sizePolicy = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -811,6 +813,45 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.btn_igual, 4, 2, 1, 2)
 
+        self.btn_clear_history = QPushButton(self.centralwidget)
+        self.btn_clear_history.setObjectName(u"btn_clear_history")
+        self.btn_clear_history.setGeometry(QRect(740, 440, 52, 42))
+        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Maximum)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.btn_clear_history.sizePolicy().hasHeightForWidth())
+        self.btn_clear_history.setSizePolicy(sizePolicy1)
+        self.btn_clear_history.setMinimumSize(QSize(52, 42))
+        self.btn_clear_history.setMaximumSize(QSize(42, 32))
+        self.btn_clear_history.setStyleSheet(u"QPushButton#btn_clear_history {\n"
+"    background-color: #FF9800;  /* Mismo color que el bot\u00f3n \"=\" */\n"
+"    color: white;  /* Color del icono */\n"
+"    border-radius: 5px;  /* Bordes sutilmente redondeados */\n"
+"    border: 1px solid #FFB74D;  /* Borde ligeramente m\u00e1s claro */\n"
+"    min-width: 50px;\n"
+"    min-height: 40px;\n"
+"}\n"
+"\n"
+"QPushButton#btn_clear_history:hover {\n"
+"    background-color: #FFA726;  /* Naranja m\u00e1s claro al pasar el mouse */\n"
+"}\n"
+"\n"
+"QPushButton#btn_clear_history:pressed {\n"
+"    background-color: #D32F2F;  /* Rojo igual que \"Clear\" cuando se presiona */\n"
+"    border: 1px solid #FF5252;\n"
+"}\n"
+"\n"
+"QPushButton#btn_clear_history:disabled {\n"
+"    background-color: #555555;  /* Gris oscuro cuando est\u00e1 deshabilitado */\n"
+"    color: #888888;\n"
+"    border: 1px solid #444444;\n"
+"}\n"
+"")
+        icon = QIcon()
+        icon.addFile(u"icons/papelera.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_clear_history.setIcon(icon)
+        self.btn_clear_history.setIconSize(QSize(16, 16))
+        self.btn_clear_history.setFlat(True)
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -844,5 +885,6 @@ class Ui_MainWindow(object):
         self.btn_multiplicacion.setText(QCoreApplication.translate("MainWindow", u"x", None))
         self.btn_clear.setText(QCoreApplication.translate("MainWindow", u"Clear", None))
         self.btn_igual.setText(QCoreApplication.translate("MainWindow", u"=", None))
+        self.btn_clear_history.setText("")
     # retranslateUi
 
