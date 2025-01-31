@@ -28,6 +28,9 @@ class pantalla(QMainWindow):
         self.btn_borrar_ultimo_numero.clicked.connect(self.delete_last_character)
         self.btn_clear.clicked.connect(self.clear_display)
         self.btn_clear_history.clicked.connect(self.clear_history)
+        
+        self.btn_close.clicked.connect(self.close)
+        self.btn_mini.clicked.connect(self.showMinimized)
 
 
     def add_to_display(self, text):

@@ -1035,6 +1035,82 @@ QPushButton#btn_clear_history:disabled {
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QPushButton" name="btn_close">
+    <property name="geometry">
+     <rect>
+      <x>764</x>
+      <y>10</y>
+      <width>31</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+      <italic>false</italic>
+      <fontweight>ExtraBold</fontweight>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#btn_close {
+    background-color: transparent;  /* Sin fondo */
+    color: white;  /* Texto blanco por defecto */
+    border: none;  /* Sin bordes */
+    font-size: 18px;  /* Tamaño del texto */
+    padding: 5px;
+}
+
+QPushButton#btn_close:hover {
+    color: #A0A0A0;  /* Gris claro al pasar el mouse */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>X</string>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_mini">
+    <property name="geometry">
+     <rect>
+      <x>730</x>
+      <y>-19</y>
+      <width>41</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="sizeIncrement">
+     <size>
+      <width>0</width>
+      <height>4</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+      <fontweight>ExtraBold</fontweight>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#btn_mini {
+    background-color: transparent;  /* Sin fondo */
+    color: white;  /* Texto blanco por defecto */
+    border: none;  /* Sin bordes */
+    font-size: 30px;  /* Tamaño del texto */
+    padding: 5px;
+}
+
+QPushButton#btn_mini:hover {
+    color: #A0A0A0;  /* Gris claro al pasar el mouse */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>_</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>

@@ -852,6 +852,45 @@ class Ui_MainWindow(object):
         self.btn_clear_history.setIcon(icon)
         self.btn_clear_history.setIconSize(QSize(16, 16))
         self.btn_clear_history.setFlat(True)
+        self.btn_close = QPushButton(self.centralwidget)
+        self.btn_close.setObjectName(u"btn_close")
+        self.btn_close.setGeometry(QRect(764, 10, 31, 24))
+        font3 = QFont()
+        font3.setWeight(QFont.ExtraBold)
+        font3.setItalic(False)
+        self.btn_close.setFont(font3)
+        self.btn_close.setStyleSheet(u"QPushButton#btn_close {\n"
+"    background-color: transparent;  /* Sin fondo */\n"
+"    color: white;  /* Texto blanco por defecto */\n"
+"    border: none;  /* Sin bordes */\n"
+"    font-size: 18px;  /* Tama\u00f1o del texto */\n"
+"    padding: 5px;\n"
+"}\n"
+"\n"
+"QPushButton#btn_close:hover {\n"
+"    color: #A0A0A0;  /* Gris claro al pasar el mouse */\n"
+"}\n"
+"")
+        self.btn_close.setFlat(True)
+        self.btn_mini = QPushButton(self.centralwidget)
+        self.btn_mini.setObjectName(u"btn_mini")
+        self.btn_mini.setGeometry(QRect(730, -19, 41, 51))
+        self.btn_mini.setSizeIncrement(QSize(0, 4))
+        font4 = QFont()
+        font4.setWeight(QFont.ExtraBold)
+        self.btn_mini.setFont(font4)
+        self.btn_mini.setStyleSheet(u"QPushButton#btn_mini {\n"
+"    background-color: transparent;  /* Sin fondo */\n"
+"    color: white;  /* Texto blanco por defecto */\n"
+"    border: none;  /* Sin bordes */\n"
+"    font-size: 30px;  /* Tama\u00f1o del texto */\n"
+"    padding: 5px;\n"
+"}\n"
+"\n"
+"QPushButton#btn_mini:hover {\n"
+"    color: #A0A0A0;  /* Gris claro al pasar el mouse */\n"
+"}\n"
+"")
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -886,5 +925,7 @@ class Ui_MainWindow(object):
         self.btn_clear.setText(QCoreApplication.translate("MainWindow", u"Clear", None))
         self.btn_igual.setText(QCoreApplication.translate("MainWindow", u"=", None))
         self.btn_clear_history.setText("")
+        self.btn_close.setText(QCoreApplication.translate("MainWindow", u"X", None))
+        self.btn_mini.setText(QCoreApplication.translate("MainWindow", u"_", None))
     # retranslateUi
 
