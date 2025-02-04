@@ -1,6 +1,7 @@
 import sys
 from PyQt6 import uic
 from PyQt6.QtWidgets import *
+from PyQt6.QtCore import Qt 
 
 class pantalla(QMainWindow):
     def __init__(self):
@@ -9,6 +10,11 @@ class pantalla(QMainWindow):
 
         self.id_operacion = 1  # Contador para el historial
         self.display.setText("0")  # Inicializar el display en 0
+
+        #Variables para mover la ventana con el ratón 
+        # Esto permite quitar la barra de título
+        self.setWindowFlags(self.windowFlags() | Qt.WindowType.FramelessWindowHint) 
+        self.old_pos = None  # Guarda la posición previa del mouse
 
         # Conectar los botones con las funciones
         self.setup_buttons()
@@ -28,7 +34,8 @@ class pantalla(QMainWindow):
         self.btn_borrar_ultimo_numero.clicked.connect(self.delete_last_character)
         self.btn_clear.clicked.connect(self.clear_display)
         self.btn_clear_history.clicked.connect(self.clear_history)
-        
+        #! Tenemos que añadir varios botones más que completen la rubrica
+        # Botones de la ventana
         self.btn_close.clicked.connect(self.close)
         self.btn_mini.clicked.connect(self.showMinimized)
 
@@ -66,8 +73,7 @@ class pantalla(QMainWindow):
         self.table_history.setItem(row_position, 0, QTableWidgetItem(str(self.id_operacion)))
         self.table_history.setItem(row_position, 1, QTableWidgetItem(operation))
         self.table_history.setItem(row_position, 2, QTableWidgetItem(str(result)))
-        
-        
+           
        
         self.id_operacion += 1
 
@@ -81,6 +87,21 @@ class pantalla(QMainWindow):
         msg.setWindowTitle("Error")
         msg.setText(message)
         msg.exec()
+    
+    # Eventos para mover la ventana con el ratón
+    def mousePressEvent(self, event):
+        if event.button() == Qt.MouseButton.LeftButton:
+            self.old_pos = event.globalPosition().toPoint()
+
+    def mouseMoveEvent(self, event):
+        if self.old_pos is not None:
+            delta = event.globalPosition().toPoint() - self.old_pos
+            self.move(self.x() + delta.x(), self.y() + delta.y())
+            self.old_pos = event.globalPosition().toPoint()
+
+    def mouseReleaseEvent(self, event):
+        self.old_pos = None  # Resetea la posición cuando se suelta el b
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

@@ -23,9 +23,9 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(800, 501)
-        MainWindow.setMinimumSize(QSize(800, 501))
-        MainWindow.setMaximumSize(QSize(800, 502))
+        MainWindow.resize(800, 600)
+        MainWindow.setMinimumSize(QSize(800, 600))
+        MainWindow.setMaximumSize(QSize(800, 602))
         font = QFont()
         font.setPointSize(20)
         MainWindow.setFont(font)
@@ -38,7 +38,7 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName(u"centralwidget")
         self.display = QLineEdit(self.centralwidget)
         self.display.setObjectName(u"display")
-        self.display.setGeometry(QRect(20, 50, 411, 121))
+        self.display.setGeometry(QRect(20, 130, 411, 121))
         font1 = QFont()
         self.display.setFont(font1)
         self.display.setStyleSheet(u"QLineEdit {\n"
@@ -61,7 +61,7 @@ class Ui_MainWindow(object):
         self.table_history.setHorizontalHeaderItem(2, __qtablewidgetitem2)
         self.table_history.setObjectName(u"table_history")
         self.table_history.setEnabled(True)
-        self.table_history.setGeometry(QRect(450, 40, 341, 431))
+        self.table_history.setGeometry(QRect(450, 40, 341, 531))
         sizePolicy = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -108,7 +108,7 @@ class Ui_MainWindow(object):
         self.table_history.verticalHeader().setCascadingSectionResizes(True)
         self.layoutWidget = QWidget(self.centralwidget)
         self.layoutWidget.setObjectName(u"layoutWidget")
-        self.layoutWidget.setGeometry(QRect(10, 150, 431, 336))
+        self.layoutWidget.setGeometry(QRect(10, 230, 431, 341))
         self.layoutWidget.setStyleSheet(u"QPushButton {\n"
 "    background-color: #1E1E1E;\n"
 "    color: white;\n"
@@ -394,11 +394,7 @@ class Ui_MainWindow(object):
 "    font-weight: bold;\n"
 "}\n"
 "\n"
-"/* Bot\u00f3n de limpiar (Clear) */\n"
-"QPushButton#btn_clear {\n"
-"    background-color: #FF5722;\n"
-"    color: white;\n"
-"}\n"
+"\n"
 "")
 
         self.gridLayout.addWidget(self.btn_6, 1, 2, 1, 1)
@@ -815,7 +811,7 @@ class Ui_MainWindow(object):
 
         self.btn_clear_history = QPushButton(self.centralwidget)
         self.btn_clear_history.setObjectName(u"btn_clear_history")
-        self.btn_clear_history.setGeometry(QRect(740, 440, 52, 42))
+        self.btn_clear_history.setGeometry(QRect(720, 520, 52, 42))
         sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Maximum)
         sizePolicy1.setHorizontalStretch(0)
         sizePolicy1.setVerticalStretch(0)
@@ -893,7 +889,7 @@ class Ui_MainWindow(object):
 "")
         self.label_titulo = QLabel(self.centralwidget)
         self.label_titulo.setObjectName(u"label_titulo")
-        self.label_titulo.setGeometry(QRect(0, 0, 141, 31))
+        self.label_titulo.setGeometry(QRect(10, 20, 141, 31))
         self.label_titulo.setFont(font2)
         self.label_titulo.setStyleSheet(u"QLabel#label_titulo {\n"
 "    font-size: 24px;  /* Tama\u00f1o del texto */\n"
