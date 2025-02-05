@@ -38,9 +38,10 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName(u"centralwidget")
         self.display = QLineEdit(self.centralwidget)
         self.display.setObjectName(u"display")
-        self.display.setGeometry(QRect(20, 130, 411, 121))
+        self.display.setGeometry(QRect(20, 80, 411, 121))
         font1 = QFont()
         self.display.setFont(font1)
+        self.display.setLayoutDirection(Qt.LayoutDirection.RightToLeft)
         self.display.setStyleSheet(u"QLineEdit {\n"
 "    background-color: transparent;\n"
 "    color: white;\n"
@@ -106,709 +107,6 @@ class Ui_MainWindow(object):
         self.table_history.horizontalHeader().setStretchLastSection(True)
         self.table_history.verticalHeader().setVisible(False)
         self.table_history.verticalHeader().setCascadingSectionResizes(True)
-        self.layoutWidget = QWidget(self.centralwidget)
-        self.layoutWidget.setObjectName(u"layoutWidget")
-        self.layoutWidget.setGeometry(QRect(10, 230, 431, 341))
-        self.layoutWidget.setStyleSheet(u"QPushButton {\n"
-"    background-color: #1E1E1E;\n"
-"    color: white;\n"
-"    border: none;\n"
-"    font-size: 24px;\n"
-"    padding: 15px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #333333;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de igual (=) */\n"
-"QPushButton#btn_igual {\n"
-"    background-color: #FF9800;\n"
-"    color: black;\n"
-"    font-weight: bold;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de eliminar (DEL) */\n"
-"QPushButton#btn_del {\n"
-"    background-color: #D32F2F;\n"
-"    color: white;\n"
-"    font-weight: bold;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de limpiar (Clear) */\n"
-"QPushButton#btn_clear {\n"
-"    background-color: #FF5722;\n"
-"    color: white;\n"
-"}\n"
-"")
-        self.gridLayout = QGridLayout(self.layoutWidget)
-        self.gridLayout.setObjectName(u"gridLayout")
-        self.gridLayout.setContentsMargins(0, 0, 0, 0)
-        self.btn_7 = QPushButton(self.layoutWidget)
-        self.btn_7.setObjectName(u"btn_7")
-        self.btn_7.setStyleSheet(u"QPushButton {\n"
-"    background-color: #1E1E1E;\n"
-"    color: white;\n"
-"    border: none;\n"
-"    font-size: 24px;\n"
-"    padding: 15px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #333333;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de igual (=) */\n"
-"QPushButton#btn_igual {\n"
-"    background-color: #FF9800;\n"
-"    color: black;\n"
-"    font-weight: bold;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de eliminar (DEL) */\n"
-"QPushButton#btn_del {\n"
-"    background-color: #D32F2F;\n"
-"    color: white;\n"
-"    font-weight: bold;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de limpiar (Clear) */\n"
-"QPushButton#btn_clear {\n"
-"    background-color: #FF5722;\n"
-"    color: white;\n"
-"}\n"
-"")
-
-        self.gridLayout.addWidget(self.btn_7, 0, 0, 1, 1)
-
-        self.btn_8 = QPushButton(self.layoutWidget)
-        self.btn_8.setObjectName(u"btn_8")
-        self.btn_8.setStyleSheet(u"QPushButton {\n"
-"    background-color: #1E1E1E;\n"
-"    color: white;\n"
-"    border: none;\n"
-"    font-size: 24px;\n"
-"    padding: 15px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #333333;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de igual (=) */\n"
-"QPushButton#btn_igual {\n"
-"    background-color: #FF9800;\n"
-"    color: black;\n"
-"    font-weight: bold;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de eliminar (DEL) */\n"
-"QPushButton#btn_del {\n"
-"    background-color: #D32F2F;\n"
-"    color: white;\n"
-"    font-weight: bold;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de limpiar (Clear) */\n"
-"QPushButton#btn_clear {\n"
-"    background-color: #FF5722;\n"
-"    color: white;\n"
-"}\n"
-"")
-
-        self.gridLayout.addWidget(self.btn_8, 0, 1, 1, 1)
-
-        self.btn_9 = QPushButton(self.layoutWidget)
-        self.btn_9.setObjectName(u"btn_9")
-        self.btn_9.setStyleSheet(u"QPushButton {\n"
-"    background-color: #1E1E1E;\n"
-"    color: white;\n"
-"    border: none;\n"
-"    font-size: 24px;\n"
-"    padding: 15px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #333333;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de igual (=) */\n"
-"QPushButton#btn_igual {\n"
-"    background-color: #FF9800;\n"
-"    color: black;\n"
-"    font-weight: bold;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de eliminar (DEL) */\n"
-"QPushButton#btn_del {\n"
-"    background-color: #D32F2F;\n"
-"    color: white;\n"
-"    font-weight: bold;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de limpiar (Clear) */\n"
-"QPushButton#btn_clear {\n"
-"    background-color: #FF5722;\n"
-"    color: white;\n"
-"}\n"
-"")
-
-        self.gridLayout.addWidget(self.btn_9, 0, 2, 1, 1)
-
-        self.btn_borrar_ultimo_numero = QPushButton(self.layoutWidget)
-        self.btn_borrar_ultimo_numero.setObjectName(u"btn_borrar_ultimo_numero")
-        self.btn_borrar_ultimo_numero.setStyleSheet(u"QPushButton {\n"
-"    background-color: #1E1E1E;\n"
-"    color: white;\n"
-"    border: none;\n"
-"    font-size: 24px;\n"
-"    padding: 15px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #333333;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de igual (=) */\n"
-"QPushButton#btn_igual {\n"
-"    background-color: #FF9800;\n"
-"    color: black;\n"
-"    font-weight: bold;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de eliminar (DEL) */\n"
-"QPushButton#btn_del {\n"
-"    background-color: #D32F2F;\n"
-"    color: white;\n"
-"    font-weight: bold;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de limpiar (Clear) */\n"
-"QPushButton#btn_clear {\n"
-"    background-color: #FF5722;\n"
-"    color: white;\n"
-"}\n"
-"")
-
-        self.gridLayout.addWidget(self.btn_borrar_ultimo_numero, 0, 3, 1, 1)
-
-        self.btn_4 = QPushButton(self.layoutWidget)
-        self.btn_4.setObjectName(u"btn_4")
-        self.btn_4.setStyleSheet(u"QPushButton {\n"
-"    background-color: #1E1E1E;\n"
-"    color: white;\n"
-"    border: none;\n"
-"    font-size: 24px;\n"
-"    padding: 15px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #333333;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de igual (=) */\n"
-"QPushButton#btn_igual {\n"
-"    background-color: #FF9800;\n"
-"    color: black;\n"
-"    font-weight: bold;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de eliminar (DEL) */\n"
-"QPushButton#btn_del {\n"
-"    background-color: #D32F2F;\n"
-"    color: white;\n"
-"    font-weight: bold;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de limpiar (Clear) */\n"
-"QPushButton#btn_clear {\n"
-"    background-color: #FF5722;\n"
-"    color: white;\n"
-"}\n"
-"")
-
-        self.gridLayout.addWidget(self.btn_4, 1, 0, 1, 1)
-
-        self.btn_5 = QPushButton(self.layoutWidget)
-        self.btn_5.setObjectName(u"btn_5")
-        self.btn_5.setStyleSheet(u"QPushButton {\n"
-"    background-color: #1E1E1E;\n"
-"    color: white;\n"
-"    border: none;\n"
-"    font-size: 24px;\n"
-"    padding: 15px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #333333;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de igual (=) */\n"
-"QPushButton#btn_igual {\n"
-"    background-color: #FF9800;\n"
-"    color: black;\n"
-"    font-weight: bold;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de eliminar (DEL) */\n"
-"QPushButton#btn_del {\n"
-"    background-color: #D32F2F;\n"
-"    color: white;\n"
-"    font-weight: bold;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de limpiar (Clear) */\n"
-"QPushButton#btn_clear {\n"
-"    background-color: #FF5722;\n"
-"    color: white;\n"
-"}\n"
-"")
-
-        self.gridLayout.addWidget(self.btn_5, 1, 1, 1, 1)
-
-        self.btn_6 = QPushButton(self.layoutWidget)
-        self.btn_6.setObjectName(u"btn_6")
-        self.btn_6.setStyleSheet(u"QPushButton {\n"
-"    background-color: #1E1E1E;\n"
-"    color: white;\n"
-"    border: none;\n"
-"    font-size: 24px;\n"
-"    padding: 15px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #333333;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de igual (=) */\n"
-"QPushButton#btn_igual {\n"
-"    background-color: #FF9800;\n"
-"    color: black;\n"
-"    font-weight: bold;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de eliminar (DEL) */\n"
-"QPushButton#btn_del {\n"
-"    background-color: #D32F2F;\n"
-"    color: white;\n"
-"    font-weight: bold;\n"
-"}\n"
-"\n"
-"\n"
-"")
-
-        self.gridLayout.addWidget(self.btn_6, 1, 2, 1, 1)
-
-        self.btn_resta = QPushButton(self.layoutWidget)
-        self.btn_resta.setObjectName(u"btn_resta")
-        self.btn_resta.setStyleSheet(u"QPushButton {\n"
-"    background-color: #1E1E1E;\n"
-"    color: white;\n"
-"    border: none;\n"
-"    font-size: 24px;\n"
-"    padding: 15px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #333333;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de igual (=) */\n"
-"QPushButton#btn_igual {\n"
-"    background-color: #FF9800;\n"
-"    color: black;\n"
-"    font-weight: bold;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de eliminar (DEL) */\n"
-"QPushButton#btn_del {\n"
-"    background-color: #D32F2F;\n"
-"    color: white;\n"
-"    font-weight: bold;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de limpiar (Clear) */\n"
-"QPushButton#btn_clear {\n"
-"    background-color: #FF5722;\n"
-"    color: white;\n"
-"}\n"
-"")
-
-        self.gridLayout.addWidget(self.btn_resta, 1, 3, 1, 1)
-
-        self.btn_1 = QPushButton(self.layoutWidget)
-        self.btn_1.setObjectName(u"btn_1")
-        self.btn_1.setStyleSheet(u"QPushButton {\n"
-"    background-color: #1E1E1E;\n"
-"    color: white;\n"
-"    border: none;\n"
-"    font-size: 24px;\n"
-"    padding: 15px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #333333;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de igual (=) */\n"
-"QPushButton#btn_igual {\n"
-"    background-color: #FF9800;\n"
-"    color: black;\n"
-"    font-weight: bold;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de eliminar (DEL) */\n"
-"QPushButton#btn_del {\n"
-"    background-color: #D32F2F;\n"
-"    color: white;\n"
-"    font-weight: bold;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de limpiar (Clear) */\n"
-"QPushButton#btn_clear {\n"
-"    background-color: #FF5722;\n"
-"    color: white;\n"
-"}\n"
-"")
-
-        self.gridLayout.addWidget(self.btn_1, 2, 0, 1, 1)
-
-        self.btn_2 = QPushButton(self.layoutWidget)
-        self.btn_2.setObjectName(u"btn_2")
-        self.btn_2.setStyleSheet(u"QPushButton {\n"
-"    background-color: #1E1E1E;\n"
-"    color: white;\n"
-"    border: none;\n"
-"    font-size: 24px;\n"
-"    padding: 15px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #333333;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de igual (=) */\n"
-"QPushButton#btn_igual {\n"
-"    background-color: #FF9800;\n"
-"    color: black;\n"
-"    font-weight: bold;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de eliminar (DEL) */\n"
-"QPushButton#btn_del {\n"
-"    background-color: #D32F2F;\n"
-"    color: white;\n"
-"    font-weight: bold;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de limpiar (Clear) */\n"
-"QPushButton#btn_clear {\n"
-"    background-color: #FF5722;\n"
-"    color: white;\n"
-"}\n"
-"")
-
-        self.gridLayout.addWidget(self.btn_2, 2, 1, 1, 1)
-
-        self.btn_3 = QPushButton(self.layoutWidget)
-        self.btn_3.setObjectName(u"btn_3")
-        self.btn_3.setStyleSheet(u"QPushButton {\n"
-"    background-color: #1E1E1E;\n"
-"    color: white;\n"
-"    border: none;\n"
-"    font-size: 24px;\n"
-"    padding: 15px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #333333;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de igual (=) */\n"
-"QPushButton#btn_igual {\n"
-"    background-color: #FF9800;\n"
-"    color: black;\n"
-"    font-weight: bold;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de eliminar (DEL) */\n"
-"QPushButton#btn_del {\n"
-"    background-color: #D32F2F;\n"
-"    color: white;\n"
-"    font-weight: bold;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de limpiar (Clear) */\n"
-"QPushButton#btn_clear {\n"
-"    background-color: #FF5722;\n"
-"    color: white;\n"
-"}\n"
-"")
-
-        self.gridLayout.addWidget(self.btn_3, 2, 2, 1, 1)
-
-        self.btn_suma = QPushButton(self.layoutWidget)
-        self.btn_suma.setObjectName(u"btn_suma")
-        self.btn_suma.setStyleSheet(u"QPushButton {\n"
-"    background-color: #1E1E1E;\n"
-"    color: white;\n"
-"    border: none;\n"
-"    font-size: 24px;\n"
-"    padding: 15px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #333333;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de igual (=) */\n"
-"QPushButton#btn_igual {\n"
-"    background-color: #FF9800;\n"
-"    color: black;\n"
-"    font-weight: bold;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de eliminar (DEL) */\n"
-"QPushButton#btn_del {\n"
-"    background-color: #D32F2F;\n"
-"    color: white;\n"
-"    font-weight: bold;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de limpiar (Clear) */\n"
-"QPushButton#btn_clear {\n"
-"    background-color: #FF5722;\n"
-"    color: white;\n"
-"}\n"
-"")
-
-        self.gridLayout.addWidget(self.btn_suma, 2, 3, 1, 1)
-
-        self.btn_coma = QPushButton(self.layoutWidget)
-        self.btn_coma.setObjectName(u"btn_coma")
-        self.btn_coma.setStyleSheet(u"QPushButton {\n"
-"    background-color: #1E1E1E;\n"
-"    color: white;\n"
-"    border: none;\n"
-"    font-size: 24px;\n"
-"    padding: 15px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #333333;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de igual (=) */\n"
-"QPushButton#btn_igual {\n"
-"    background-color: #FF9800;\n"
-"    color: black;\n"
-"    font-weight: bold;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de eliminar (DEL) */\n"
-"QPushButton#btn_del {\n"
-"    background-color: #D32F2F;\n"
-"    color: white;\n"
-"    font-weight: bold;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de limpiar (Clear) */\n"
-"QPushButton#btn_clear {\n"
-"    background-color: #FF5722;\n"
-"    color: white;\n"
-"}\n"
-"")
-
-        self.gridLayout.addWidget(self.btn_coma, 3, 0, 1, 1)
-
-        self.btn_0 = QPushButton(self.layoutWidget)
-        self.btn_0.setObjectName(u"btn_0")
-        font2 = QFont()
-        font2.setBold(True)
-        self.btn_0.setFont(font2)
-        self.btn_0.setStyleSheet(u"QPushButton {\n"
-"    background-color: #1E1E1E;\n"
-"    color: white;\n"
-"    border: none;\n"
-"    font-size: 24px;\n"
-"    padding: 15px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #333333;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de igual (=) */\n"
-"QPushButton#btn_igual {\n"
-"    background-color: #FF9800;\n"
-"    color: black;\n"
-"    font-weight: bold;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de eliminar (DEL) */\n"
-"QPushButton#btn_del {\n"
-"    background-color: #D32F2F;\n"
-"    color: white;\n"
-"    font-weight: bold;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de limpiar (Clear) */\n"
-"QPushButton#btn_clear {\n"
-"    background-color: #FF5722;\n"
-"    color: white;\n"
-"}\n"
-"")
-
-        self.gridLayout.addWidget(self.btn_0, 3, 1, 1, 1)
-
-        self.btn_dividir = QPushButton(self.layoutWidget)
-        self.btn_dividir.setObjectName(u"btn_dividir")
-        self.btn_dividir.setStyleSheet(u"QPushButton {\n"
-"    background-color: #1E1E1E;\n"
-"    color: white;\n"
-"    border: none;\n"
-"    font-size: 24px;\n"
-"    padding: 15px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #333333;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de igual (=) */\n"
-"QPushButton#btn_igual {\n"
-"    background-color: #FF9800;\n"
-"    color: black;\n"
-"    font-weight: bold;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de eliminar (DEL) */\n"
-"QPushButton#btn_del {\n"
-"    background-color: #D32F2F;\n"
-"    color: white;\n"
-"    font-weight: bold;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de limpiar (Clear) */\n"
-"QPushButton#btn_clear {\n"
-"    background-color: #FF5722;\n"
-"    color: white;\n"
-"}\n"
-"")
-
-        self.gridLayout.addWidget(self.btn_dividir, 3, 2, 1, 1)
-
-        self.btn_multiplicacion = QPushButton(self.layoutWidget)
-        self.btn_multiplicacion.setObjectName(u"btn_multiplicacion")
-        self.btn_multiplicacion.setStyleSheet(u"QPushButton {\n"
-"    background-color: #1E1E1E;\n"
-"    color: white;\n"
-"    border: none;\n"
-"    font-size: 24px;\n"
-"    padding: 15px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #333333;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de igual (=) */\n"
-"QPushButton#btn_igual {\n"
-"    background-color: #FF9800;\n"
-"    color: black;\n"
-"    font-weight: bold;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de eliminar (DEL) */\n"
-"QPushButton#btn_del {\n"
-"    background-color: #D32F2F;\n"
-"    color: white;\n"
-"    font-weight: bold;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de limpiar (Clear) */\n"
-"QPushButton#btn_clear {\n"
-"    background-color: #FF5722;\n"
-"    color: white;\n"
-"}\n"
-"")
-
-        self.gridLayout.addWidget(self.btn_multiplicacion, 3, 3, 1, 1)
-
-        self.btn_clear = QPushButton(self.layoutWidget)
-        self.btn_clear.setObjectName(u"btn_clear")
-        self.btn_clear.setStyleSheet(u"QPushButton {\n"
-"    background-color: #1E1E1E;\n"
-"    color: white;\n"
-"    border: none;\n"
-"    font-size: 24px;\n"
-"    padding: 15px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #333333;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de igual (=) */\n"
-"QPushButton#btn_igual {\n"
-"    background-color: #FF9800;\n"
-"    color: black;\n"
-"    font-weight: bold;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de eliminar (DEL) */\n"
-"QPushButton#btn_del {\n"
-"    background-color: #D32F2F;\n"
-"    color: white;\n"
-"    font-weight: bold;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de limpiar (Clear) */\n"
-"QPushButton#btn_clear {\n"
-"    background-color: #FF5722;\n"
-"    color: white;\n"
-"}\n"
-"")
-
-        self.gridLayout.addWidget(self.btn_clear, 4, 0, 1, 2)
-
-        self.btn_igual = QPushButton(self.layoutWidget)
-        self.btn_igual.setObjectName(u"btn_igual")
-        self.btn_igual.setStyleSheet(u"QPushButton {\n"
-"    background-color: #1E1E1E;\n"
-"    color: white;\n"
-"    border: none;\n"
-"    font-size: 24px;\n"
-"    padding: 15px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #333333;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de igual (=) */\n"
-"QPushButton#btn_igual {\n"
-"    background-color: #FF9800;\n"
-"    color: black;\n"
-"    font-weight: bold;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de eliminar (DEL) */\n"
-"QPushButton#btn_del {\n"
-"    background-color: #D32F2F;\n"
-"    color: white;\n"
-"    font-weight: bold;\n"
-"}\n"
-"\n"
-"/* Bot\u00f3n de limpiar (Clear) */\n"
-"QPushButton#btn_clear {\n"
-"    background-color: #FF5722;\n"
-"    color: white;\n"
-"}\n"
-"")
-
-        self.gridLayout.addWidget(self.btn_igual, 4, 2, 1, 2)
-
         self.btn_clear_history = QPushButton(self.centralwidget)
         self.btn_clear_history.setObjectName(u"btn_clear_history")
         self.btn_clear_history.setGeometry(QRect(720, 520, 52, 42))
@@ -851,10 +149,10 @@ class Ui_MainWindow(object):
         self.btn_close = QPushButton(self.centralwidget)
         self.btn_close.setObjectName(u"btn_close")
         self.btn_close.setGeometry(QRect(764, 10, 31, 24))
-        font3 = QFont()
-        font3.setWeight(QFont.ExtraBold)
-        font3.setItalic(False)
-        self.btn_close.setFont(font3)
+        font2 = QFont()
+        font2.setWeight(QFont.ExtraBold)
+        font2.setItalic(False)
+        self.btn_close.setFont(font2)
         self.btn_close.setStyleSheet(u"QPushButton#btn_close {\n"
 "    background-color: transparent;  /* Sin fondo */\n"
 "    color: white;  /* Texto blanco por defecto */\n"
@@ -872,9 +170,9 @@ class Ui_MainWindow(object):
         self.btn_mini.setObjectName(u"btn_mini")
         self.btn_mini.setGeometry(QRect(730, -19, 41, 51))
         self.btn_mini.setSizeIncrement(QSize(0, 4))
-        font4 = QFont()
-        font4.setWeight(QFont.ExtraBold)
-        self.btn_mini.setFont(font4)
+        font3 = QFont()
+        font3.setWeight(QFont.ExtraBold)
+        self.btn_mini.setFont(font3)
         self.btn_mini.setStyleSheet(u"QPushButton#btn_mini {\n"
 "    background-color: transparent;  /* Sin fondo */\n"
 "    color: white;  /* Texto blanco por defecto */\n"
@@ -890,7 +188,9 @@ class Ui_MainWindow(object):
         self.label_titulo = QLabel(self.centralwidget)
         self.label_titulo.setObjectName(u"label_titulo")
         self.label_titulo.setGeometry(QRect(10, 20, 141, 31))
-        self.label_titulo.setFont(font2)
+        font4 = QFont()
+        font4.setBold(True)
+        self.label_titulo.setFont(font4)
         self.label_titulo.setStyleSheet(u"QLabel#label_titulo {\n"
 "    font-size: 24px;  /* Tama\u00f1o del texto */\n"
 "    font-weight: bold;  /* Negrita */\n"
@@ -899,6 +199,743 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         self.label_titulo.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.widget = QWidget(self.centralwidget)
+        self.widget.setObjectName(u"widget")
+        self.widget.setGeometry(QRect(11, 180, 431, 404))
+        self.gridLayout = QGridLayout(self.widget)
+        self.gridLayout.setObjectName(u"gridLayout")
+        self.gridLayout.setContentsMargins(0, 0, 0, 0)
+        self.btn_porcentaje = QPushButton(self.widget)
+        self.btn_porcentaje.setObjectName(u"btn_porcentaje")
+        self.btn_porcentaje.setStyleSheet(u"QPushButton {\n"
+"    background-color: #1E1E1E;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    font-size: 24px;\n"
+"    padding: 15px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #333333;\n"
+"}\n"
+"")
+
+        self.gridLayout.addWidget(self.btn_porcentaje, 0, 0, 1, 1)
+
+        self.btn_raiz = QPushButton(self.widget)
+        self.btn_raiz.setObjectName(u"btn_raiz")
+        self.btn_raiz.setStyleSheet(u"QPushButton {\n"
+"    background-color: #1E1E1E;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    font-size: 24px;\n"
+"    padding: 15px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #333333;\n"
+"}\n"
+"")
+
+        self.gridLayout.addWidget(self.btn_raiz, 0, 1, 1, 1)
+
+        self.btn_parentesis_izq = QPushButton(self.widget)
+        self.btn_parentesis_izq.setObjectName(u"btn_parentesis_izq")
+        self.btn_parentesis_izq.setStyleSheet(u"QPushButton {\n"
+"    background-color: #1E1E1E;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    font-size: 24px;\n"
+"    padding: 15px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #333333;\n"
+"}\n"
+"")
+
+        self.gridLayout.addWidget(self.btn_parentesis_izq, 0, 2, 1, 1)
+
+        self.btn_parentesis_der = QPushButton(self.widget)
+        self.btn_parentesis_der.setObjectName(u"btn_parentesis_der")
+        self.btn_parentesis_der.setStyleSheet(u"QPushButton {\n"
+"    background-color: #1E1E1E;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    font-size: 24px;\n"
+"    padding: 15px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #333333;\n"
+"}\n"
+"")
+
+        self.gridLayout.addWidget(self.btn_parentesis_der, 0, 3, 1, 1)
+
+        self.btn_7 = QPushButton(self.widget)
+        self.btn_7.setObjectName(u"btn_7")
+        self.btn_7.setStyleSheet(u"QPushButton {\n"
+"    background-color: #1E1E1E;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    font-size: 24px;\n"
+"    padding: 15px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #333333;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de igual (=) */\n"
+"QPushButton#btn_igual {\n"
+"    background-color: #FF9800;\n"
+"    color: black;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de eliminar (DEL) */\n"
+"QPushButton#btn_del {\n"
+"    background-color: #D32F2F;\n"
+"    color: white;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de limpiar (Clear) */\n"
+"QPushButton#btn_clear {\n"
+"    background-color: #FF5722;\n"
+"    color: white;\n"
+"}\n"
+"")
+
+        self.gridLayout.addWidget(self.btn_7, 1, 0, 1, 1)
+
+        self.btn_8 = QPushButton(self.widget)
+        self.btn_8.setObjectName(u"btn_8")
+        self.btn_8.setStyleSheet(u"QPushButton {\n"
+"    background-color: #1E1E1E;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    font-size: 24px;\n"
+"    padding: 15px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #333333;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de igual (=) */\n"
+"QPushButton#btn_igual {\n"
+"    background-color: #FF9800;\n"
+"    color: black;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de eliminar (DEL) */\n"
+"QPushButton#btn_del {\n"
+"    background-color: #D32F2F;\n"
+"    color: white;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de limpiar (Clear) */\n"
+"QPushButton#btn_clear {\n"
+"    background-color: #FF5722;\n"
+"    color: white;\n"
+"}\n"
+"")
+
+        self.gridLayout.addWidget(self.btn_8, 1, 1, 1, 1)
+
+        self.btn_9 = QPushButton(self.widget)
+        self.btn_9.setObjectName(u"btn_9")
+        self.btn_9.setStyleSheet(u"QPushButton {\n"
+"    background-color: #1E1E1E;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    font-size: 24px;\n"
+"    padding: 15px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #333333;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de igual (=) */\n"
+"QPushButton#btn_igual {\n"
+"    background-color: #FF9800;\n"
+"    color: black;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de eliminar (DEL) */\n"
+"QPushButton#btn_del {\n"
+"    background-color: #D32F2F;\n"
+"    color: white;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de limpiar (Clear) */\n"
+"QPushButton#btn_clear {\n"
+"    background-color: #FF5722;\n"
+"    color: white;\n"
+"}\n"
+"")
+
+        self.gridLayout.addWidget(self.btn_9, 1, 2, 1, 1)
+
+        self.btn_borrar_ultimo_numero = QPushButton(self.widget)
+        self.btn_borrar_ultimo_numero.setObjectName(u"btn_borrar_ultimo_numero")
+        self.btn_borrar_ultimo_numero.setStyleSheet(u"QPushButton {\n"
+"    background-color: #1E1E1E;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    font-size: 24px;\n"
+"    padding: 15px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #333333;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de igual (=) */\n"
+"QPushButton#btn_igual {\n"
+"    background-color: #FF9800;\n"
+"    color: black;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de eliminar (DEL) */\n"
+"QPushButton#btn_del {\n"
+"    background-color: #D32F2F;\n"
+"    color: white;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de limpiar (Clear) */\n"
+"QPushButton#btn_clear {\n"
+"    background-color: #FF5722;\n"
+"    color: white;\n"
+"}\n"
+"")
+
+        self.gridLayout.addWidget(self.btn_borrar_ultimo_numero, 1, 3, 1, 1)
+
+        self.btn_4 = QPushButton(self.widget)
+        self.btn_4.setObjectName(u"btn_4")
+        self.btn_4.setStyleSheet(u"QPushButton {\n"
+"    background-color: #1E1E1E;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    font-size: 24px;\n"
+"    padding: 15px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #333333;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de igual (=) */\n"
+"QPushButton#btn_igual {\n"
+"    background-color: #FF9800;\n"
+"    color: black;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de eliminar (DEL) */\n"
+"QPushButton#btn_del {\n"
+"    background-color: #D32F2F;\n"
+"    color: white;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de limpiar (Clear) */\n"
+"QPushButton#btn_clear {\n"
+"    background-color: #FF5722;\n"
+"    color: white;\n"
+"}\n"
+"")
+
+        self.gridLayout.addWidget(self.btn_4, 2, 0, 1, 1)
+
+        self.btn_5 = QPushButton(self.widget)
+        self.btn_5.setObjectName(u"btn_5")
+        self.btn_5.setStyleSheet(u"QPushButton {\n"
+"    background-color: #1E1E1E;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    font-size: 24px;\n"
+"    padding: 15px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #333333;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de igual (=) */\n"
+"QPushButton#btn_igual {\n"
+"    background-color: #FF9800;\n"
+"    color: black;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de eliminar (DEL) */\n"
+"QPushButton#btn_del {\n"
+"    background-color: #D32F2F;\n"
+"    color: white;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de limpiar (Clear) */\n"
+"QPushButton#btn_clear {\n"
+"    background-color: #FF5722;\n"
+"    color: white;\n"
+"}\n"
+"")
+
+        self.gridLayout.addWidget(self.btn_5, 2, 1, 1, 1)
+
+        self.btn_6 = QPushButton(self.widget)
+        self.btn_6.setObjectName(u"btn_6")
+        self.btn_6.setStyleSheet(u"QPushButton {\n"
+"    background-color: #1E1E1E;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    font-size: 24px;\n"
+"    padding: 15px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #333333;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de igual (=) */\n"
+"QPushButton#btn_igual {\n"
+"    background-color: #FF9800;\n"
+"    color: black;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de eliminar (DEL) */\n"
+"QPushButton#btn_del {\n"
+"    background-color: #D32F2F;\n"
+"    color: white;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"\n"
+"")
+
+        self.gridLayout.addWidget(self.btn_6, 2, 2, 1, 1)
+
+        self.btn_resta = QPushButton(self.widget)
+        self.btn_resta.setObjectName(u"btn_resta")
+        self.btn_resta.setStyleSheet(u"QPushButton {\n"
+"    background-color: #1E1E1E;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    font-size: 24px;\n"
+"    padding: 15px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #333333;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de igual (=) */\n"
+"QPushButton#btn_igual {\n"
+"    background-color: #FF9800;\n"
+"    color: black;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de eliminar (DEL) */\n"
+"QPushButton#btn_del {\n"
+"    background-color: #D32F2F;\n"
+"    color: white;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de limpiar (Clear) */\n"
+"QPushButton#btn_clear {\n"
+"    background-color: #FF5722;\n"
+"    color: white;\n"
+"}\n"
+"")
+
+        self.gridLayout.addWidget(self.btn_resta, 2, 3, 1, 1)
+
+        self.btn_1 = QPushButton(self.widget)
+        self.btn_1.setObjectName(u"btn_1")
+        self.btn_1.setStyleSheet(u"QPushButton {\n"
+"    background-color: #1E1E1E;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    font-size: 24px;\n"
+"    padding: 15px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #333333;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de igual (=) */\n"
+"QPushButton#btn_igual {\n"
+"    background-color: #FF9800;\n"
+"    color: black;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de eliminar (DEL) */\n"
+"QPushButton#btn_del {\n"
+"    background-color: #D32F2F;\n"
+"    color: white;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de limpiar (Clear) */\n"
+"QPushButton#btn_clear {\n"
+"    background-color: #FF5722;\n"
+"    color: white;\n"
+"}\n"
+"")
+
+        self.gridLayout.addWidget(self.btn_1, 3, 0, 1, 1)
+
+        self.btn_2 = QPushButton(self.widget)
+        self.btn_2.setObjectName(u"btn_2")
+        self.btn_2.setStyleSheet(u"QPushButton {\n"
+"    background-color: #1E1E1E;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    font-size: 24px;\n"
+"    padding: 15px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #333333;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de igual (=) */\n"
+"QPushButton#btn_igual {\n"
+"    background-color: #FF9800;\n"
+"    color: black;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de eliminar (DEL) */\n"
+"QPushButton#btn_del {\n"
+"    background-color: #D32F2F;\n"
+"    color: white;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de limpiar (Clear) */\n"
+"QPushButton#btn_clear {\n"
+"    background-color: #FF5722;\n"
+"    color: white;\n"
+"}\n"
+"")
+
+        self.gridLayout.addWidget(self.btn_2, 3, 1, 1, 1)
+
+        self.btn_3 = QPushButton(self.widget)
+        self.btn_3.setObjectName(u"btn_3")
+        self.btn_3.setStyleSheet(u"QPushButton {\n"
+"    background-color: #1E1E1E;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    font-size: 24px;\n"
+"    padding: 15px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #333333;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de igual (=) */\n"
+"QPushButton#btn_igual {\n"
+"    background-color: #FF9800;\n"
+"    color: black;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de eliminar (DEL) */\n"
+"QPushButton#btn_del {\n"
+"    background-color: #D32F2F;\n"
+"    color: white;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de limpiar (Clear) */\n"
+"QPushButton#btn_clear {\n"
+"    background-color: #FF5722;\n"
+"    color: white;\n"
+"}\n"
+"")
+
+        self.gridLayout.addWidget(self.btn_3, 3, 2, 1, 1)
+
+        self.btn_suma = QPushButton(self.widget)
+        self.btn_suma.setObjectName(u"btn_suma")
+        self.btn_suma.setStyleSheet(u"QPushButton {\n"
+"    background-color: #1E1E1E;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    font-size: 24px;\n"
+"    padding: 15px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #333333;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de igual (=) */\n"
+"QPushButton#btn_igual {\n"
+"    background-color: #FF9800;\n"
+"    color: black;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de eliminar (DEL) */\n"
+"QPushButton#btn_del {\n"
+"    background-color: #D32F2F;\n"
+"    color: white;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de limpiar (Clear) */\n"
+"QPushButton#btn_clear {\n"
+"    background-color: #FF5722;\n"
+"    color: white;\n"
+"}\n"
+"")
+
+        self.gridLayout.addWidget(self.btn_suma, 3, 3, 1, 1)
+
+        self.btn_coma = QPushButton(self.widget)
+        self.btn_coma.setObjectName(u"btn_coma")
+        self.btn_coma.setStyleSheet(u"QPushButton {\n"
+"    background-color: #1E1E1E;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    font-size: 24px;\n"
+"    padding: 15px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #333333;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de igual (=) */\n"
+"QPushButton#btn_igual {\n"
+"    background-color: #FF9800;\n"
+"    color: black;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de eliminar (DEL) */\n"
+"QPushButton#btn_del {\n"
+"    background-color: #D32F2F;\n"
+"    color: white;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de limpiar (Clear) */\n"
+"QPushButton#btn_clear {\n"
+"    background-color: #FF5722;\n"
+"    color: white;\n"
+"}\n"
+"")
+
+        self.gridLayout.addWidget(self.btn_coma, 4, 0, 1, 1)
+
+        self.btn_0 = QPushButton(self.widget)
+        self.btn_0.setObjectName(u"btn_0")
+        self.btn_0.setFont(font4)
+        self.btn_0.setStyleSheet(u"QPushButton {\n"
+"    background-color: #1E1E1E;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    font-size: 24px;\n"
+"    padding: 15px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #333333;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de igual (=) */\n"
+"QPushButton#btn_igual {\n"
+"    background-color: #FF9800;\n"
+"    color: black;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de eliminar (DEL) */\n"
+"QPushButton#btn_del {\n"
+"    background-color: #D32F2F;\n"
+"    color: white;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de limpiar (Clear) */\n"
+"QPushButton#btn_clear {\n"
+"    background-color: #FF5722;\n"
+"    color: white;\n"
+"}\n"
+"")
+
+        self.gridLayout.addWidget(self.btn_0, 4, 1, 1, 1)
+
+        self.btn_dividir = QPushButton(self.widget)
+        self.btn_dividir.setObjectName(u"btn_dividir")
+        self.btn_dividir.setStyleSheet(u"QPushButton {\n"
+"    background-color: #1E1E1E;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    font-size: 24px;\n"
+"    padding: 15px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #333333;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de igual (=) */\n"
+"QPushButton#btn_igual {\n"
+"    background-color: #FF9800;\n"
+"    color: black;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de eliminar (DEL) */\n"
+"QPushButton#btn_del {\n"
+"    background-color: #D32F2F;\n"
+"    color: white;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de limpiar (Clear) */\n"
+"QPushButton#btn_clear {\n"
+"    background-color: #FF5722;\n"
+"    color: white;\n"
+"}\n"
+"")
+
+        self.gridLayout.addWidget(self.btn_dividir, 4, 2, 1, 1)
+
+        self.btn_multiplicacion = QPushButton(self.widget)
+        self.btn_multiplicacion.setObjectName(u"btn_multiplicacion")
+        self.btn_multiplicacion.setStyleSheet(u"QPushButton {\n"
+"    background-color: #1E1E1E;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    font-size: 24px;\n"
+"    padding: 15px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #333333;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de igual (=) */\n"
+"QPushButton#btn_igual {\n"
+"    background-color: #FF9800;\n"
+"    color: black;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de eliminar (DEL) */\n"
+"QPushButton#btn_del {\n"
+"    background-color: #D32F2F;\n"
+"    color: white;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de limpiar (Clear) */\n"
+"QPushButton#btn_clear {\n"
+"    background-color: #FF5722;\n"
+"    color: white;\n"
+"}\n"
+"")
+
+        self.gridLayout.addWidget(self.btn_multiplicacion, 4, 3, 1, 1)
+
+        self.btn_igual = QPushButton(self.widget)
+        self.btn_igual.setObjectName(u"btn_igual")
+        self.btn_igual.setStyleSheet(u"QPushButton {\n"
+"    background-color: #1E1E1E;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    font-size: 24px;\n"
+"    padding: 15px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #333333;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de igual (=) */\n"
+"QPushButton#btn_igual {\n"
+"    background-color: #FF9800;\n"
+"    color: black;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de eliminar (DEL) */\n"
+"QPushButton#btn_del {\n"
+"    background-color: #D32F2F;\n"
+"    color: white;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de limpiar (Clear) */\n"
+"QPushButton#btn_clear {\n"
+"    background-color: #FF5722;\n"
+"    color: white;\n"
+"}\n"
+"")
+
+        self.gridLayout.addWidget(self.btn_igual, 5, 2, 1, 2)
+
+        self.btn_clear = QPushButton(self.widget)
+        self.btn_clear.setObjectName(u"btn_clear")
+        self.btn_clear.setStyleSheet(u"QPushButton {\n"
+"    background-color: #1E1E1E;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    font-size: 24px;\n"
+"    padding: 15px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #333333;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de igual (=) */\n"
+"QPushButton#btn_igual {\n"
+"    background-color: #FF9800;\n"
+"    color: black;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de eliminar (DEL) */\n"
+"QPushButton#btn_del {\n"
+"    background-color: #D32F2F;\n"
+"    color: white;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"/* Bot\u00f3n de limpiar (Clear) */\n"
+"QPushButton#btn_clear {\n"
+"    background-color: #FF5722;\n"
+"    color: white;\n"
+"}\n"
+"")
+
+        self.gridLayout.addWidget(self.btn_clear, 5, 0, 1, 2)
+
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -914,6 +951,14 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"C\u00e1lculo", None));
         ___qtablewidgetitem2 = self.table_history.horizontalHeaderItem(2)
         ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Resultado", None));
+        self.btn_clear_history.setText("")
+        self.btn_close.setText(QCoreApplication.translate("MainWindow", u"X", None))
+        self.btn_mini.setText(QCoreApplication.translate("MainWindow", u"_", None))
+        self.label_titulo.setText(QCoreApplication.translate("MainWindow", u"Calculadora", None))
+        self.btn_porcentaje.setText(QCoreApplication.translate("MainWindow", u"%", None))
+        self.btn_raiz.setText(QCoreApplication.translate("MainWindow", u"\u221a", None))
+        self.btn_parentesis_izq.setText(QCoreApplication.translate("MainWindow", u"(", None))
+        self.btn_parentesis_der.setText(QCoreApplication.translate("MainWindow", u")", None))
         self.btn_7.setText(QCoreApplication.translate("MainWindow", u"7", None))
         self.btn_8.setText(QCoreApplication.translate("MainWindow", u"8", None))
         self.btn_9.setText(QCoreApplication.translate("MainWindow", u"9", None))
@@ -930,11 +975,7 @@ class Ui_MainWindow(object):
         self.btn_0.setText(QCoreApplication.translate("MainWindow", u"0", None))
         self.btn_dividir.setText(QCoreApplication.translate("MainWindow", u"\u00f7", None))
         self.btn_multiplicacion.setText(QCoreApplication.translate("MainWindow", u"x", None))
-        self.btn_clear.setText(QCoreApplication.translate("MainWindow", u"Clear", None))
         self.btn_igual.setText(QCoreApplication.translate("MainWindow", u"=", None))
-        self.btn_clear_history.setText("")
-        self.btn_close.setText(QCoreApplication.translate("MainWindow", u"X", None))
-        self.btn_mini.setText(QCoreApplication.translate("MainWindow", u"_", None))
-        self.label_titulo.setText(QCoreApplication.translate("MainWindow", u"Calculadora", None))
+        self.btn_clear.setText(QCoreApplication.translate("MainWindow", u"Clear", None))
     # retranslateUi
 

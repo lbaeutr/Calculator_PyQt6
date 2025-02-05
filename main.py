@@ -2,6 +2,7 @@ import sys
 from PyQt6 import uic
 from PyQt6.QtWidgets import *
 from PyQt6.QtCore import Qt 
+from PyQt6.QtGui import QFont
 
 class pantalla(QMainWindow):
     def __init__(self):
@@ -19,6 +20,8 @@ class pantalla(QMainWindow):
         # Conectar los botones con las funciones
         self.setup_buttons()
 
+      
+        
     def setup_buttons(self):
         # Botones numéricos
         for i in range(10):
@@ -30,6 +33,10 @@ class pantalla(QMainWindow):
         self.btn_multiplicacion.clicked.connect(lambda: self.add_to_display("*"))
         self.btn_dividir.clicked.connect(lambda: self.add_to_display("/"))
         self.btn_coma.clicked.connect(lambda: self.add_to_display("."))
+        self.btn_parentesis_der.clicked.connect(lambda: self.add_to_display(")"))
+        self.btn_parentesis_izq.clicked.connect(lambda: self.add_to_display("("))
+        self.btn_raiz.clicked.connect(lambda: self.add_to_display("√"))
+        self.btn_porcentaje.clicked.connect(lambda: self.add_to_display("%"))
         self.btn_igual.clicked.connect(self.calculate)
         self.btn_borrar_ultimo_numero.clicked.connect(self.delete_last_character)
         self.btn_clear.clicked.connect(self.clear_display)
@@ -47,6 +54,8 @@ class pantalla(QMainWindow):
         else:   
             self.display.setText(current + text)
 
+     
+
     def clear_display(self):
         self.display.setText("0")
 
@@ -57,12 +66,16 @@ class pantalla(QMainWindow):
         else:
             self.display.setText(current[:-1])
 
+
     def calculate(self):
         try:
-            operation = self.display.text()
+            operation = self.display.text() # Operacion original.
+            operation_registo = operation
+            operation = self.display.text().replace("√", "**(1/2)")
+            operation = self.display.text().replace("%", "/100")
             result = eval(operation)
             self.display.setText(str(result))
-            self.add_to_history(operation, result)
+            self.add_to_history(operation_registo, result)
         except Exception as e:
             self.show_error("Operación inválida")
             self.clear_display()
@@ -100,7 +113,8 @@ class pantalla(QMainWindow):
             self.old_pos = event.globalPosition().toPoint()
 
     def mouseReleaseEvent(self, event):
-        self.old_pos = None  # Resetea la posición cuando se suelta el b
+        self.old_pos = None  # Resetea la posición cuando se suelta el botón del ratón
+
 
 
 if __name__ == '__main__':
