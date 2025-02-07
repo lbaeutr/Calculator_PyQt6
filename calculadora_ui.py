@@ -15,9 +15,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QGridLayout, QHeaderView, QLabel,
-    QLineEdit, QMainWindow, QPushButton, QSizePolicy,
-    QTableWidget, QTableWidgetItem, QWidget)
+from PySide6.QtWidgets import (QAbstractItemView, QApplication, QGridLayout, QHeaderView,
+    QLabel, QLineEdit, QMainWindow, QPushButton,
+    QSizePolicy, QTableWidget, QTableWidgetItem, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -71,7 +71,7 @@ class Ui_MainWindow(object):
         self.table_history.setFont(font1)
         self.table_history.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.CrossCursor))
         self.table_history.setFocusPolicy(Qt.FocusPolicy.NoFocus)
-        self.table_history.setLayoutDirection(Qt.LayoutDirection.RightToLeft)
+        self.table_history.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         self.table_history.setStyleSheet(u"QTableWidget {\n"
 "    background-color: #121212;\n"
 "    color: white;\n"
@@ -95,15 +95,27 @@ class Ui_MainWindow(object):
 "    border: none;\n"
 "}\n"
 "\n"
+"QTableWidget::item:selected {\n"
+"    background-color: #FFB74D;\n"
+"    color: black; \n"
+"}\n"
+"\n"
+"\n"
 "")
         self.table_history.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.table_history.setAutoScroll(False)
+        self.table_history.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
+        self.table_history.setTabKeyNavigation(False)
+        self.table_history.setProperty(u"showDropIndicator", False)
+        self.table_history.setDragDropOverwriteMode(False)
+        self.table_history.setShowGrid(True)
         self.table_history.setGridStyle(Qt.PenStyle.SolidLine)
         self.table_history.setWordWrap(True)
         self.table_history.setRowCount(0)
         self.table_history.setColumnCount(3)
         self.table_history.horizontalHeader().setVisible(True)
-        self.table_history.horizontalHeader().setDefaultSectionSize(114)
+        self.table_history.horizontalHeader().setMinimumSectionSize(104)
+        self.table_history.horizontalHeader().setDefaultSectionSize(104)
         self.table_history.horizontalHeader().setStretchLastSection(True)
         self.table_history.verticalHeader().setVisible(False)
         self.table_history.verticalHeader().setCascadingSectionResizes(True)
@@ -199,13 +211,13 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         self.label_titulo.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.widget = QWidget(self.centralwidget)
-        self.widget.setObjectName(u"widget")
-        self.widget.setGeometry(QRect(11, 180, 431, 404))
-        self.gridLayout = QGridLayout(self.widget)
+        self.layoutWidget = QWidget(self.centralwidget)
+        self.layoutWidget.setObjectName(u"layoutWidget")
+        self.layoutWidget.setGeometry(QRect(11, 180, 431, 404))
+        self.gridLayout = QGridLayout(self.layoutWidget)
         self.gridLayout.setObjectName(u"gridLayout")
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
-        self.btn_porcentaje = QPushButton(self.widget)
+        self.btn_porcentaje = QPushButton(self.layoutWidget)
         self.btn_porcentaje.setObjectName(u"btn_porcentaje")
         self.btn_porcentaje.setStyleSheet(u"QPushButton {\n"
 "    background-color: #1E1E1E;\n"
@@ -222,7 +234,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.btn_porcentaje, 0, 0, 1, 1)
 
-        self.btn_raiz = QPushButton(self.widget)
+        self.btn_raiz = QPushButton(self.layoutWidget)
         self.btn_raiz.setObjectName(u"btn_raiz")
         self.btn_raiz.setStyleSheet(u"QPushButton {\n"
 "    background-color: #1E1E1E;\n"
@@ -239,7 +251,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.btn_raiz, 0, 1, 1, 1)
 
-        self.btn_parentesis_izq = QPushButton(self.widget)
+        self.btn_parentesis_izq = QPushButton(self.layoutWidget)
         self.btn_parentesis_izq.setObjectName(u"btn_parentesis_izq")
         self.btn_parentesis_izq.setStyleSheet(u"QPushButton {\n"
 "    background-color: #1E1E1E;\n"
@@ -256,7 +268,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.btn_parentesis_izq, 0, 2, 1, 1)
 
-        self.btn_parentesis_der = QPushButton(self.widget)
+        self.btn_parentesis_der = QPushButton(self.layoutWidget)
         self.btn_parentesis_der.setObjectName(u"btn_parentesis_der")
         self.btn_parentesis_der.setStyleSheet(u"QPushButton {\n"
 "    background-color: #1E1E1E;\n"
@@ -273,7 +285,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.btn_parentesis_der, 0, 3, 1, 1)
 
-        self.btn_7 = QPushButton(self.widget)
+        self.btn_7 = QPushButton(self.layoutWidget)
         self.btn_7.setObjectName(u"btn_7")
         self.btn_7.setStyleSheet(u"QPushButton {\n"
 "    background-color: #1E1E1E;\n"
@@ -310,7 +322,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.btn_7, 1, 0, 1, 1)
 
-        self.btn_8 = QPushButton(self.widget)
+        self.btn_8 = QPushButton(self.layoutWidget)
         self.btn_8.setObjectName(u"btn_8")
         self.btn_8.setStyleSheet(u"QPushButton {\n"
 "    background-color: #1E1E1E;\n"
@@ -347,7 +359,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.btn_8, 1, 1, 1, 1)
 
-        self.btn_9 = QPushButton(self.widget)
+        self.btn_9 = QPushButton(self.layoutWidget)
         self.btn_9.setObjectName(u"btn_9")
         self.btn_9.setStyleSheet(u"QPushButton {\n"
 "    background-color: #1E1E1E;\n"
@@ -384,7 +396,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.btn_9, 1, 2, 1, 1)
 
-        self.btn_borrar_ultimo_numero = QPushButton(self.widget)
+        self.btn_borrar_ultimo_numero = QPushButton(self.layoutWidget)
         self.btn_borrar_ultimo_numero.setObjectName(u"btn_borrar_ultimo_numero")
         self.btn_borrar_ultimo_numero.setStyleSheet(u"QPushButton {\n"
 "    background-color: #1E1E1E;\n"
@@ -421,7 +433,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.btn_borrar_ultimo_numero, 1, 3, 1, 1)
 
-        self.btn_4 = QPushButton(self.widget)
+        self.btn_4 = QPushButton(self.layoutWidget)
         self.btn_4.setObjectName(u"btn_4")
         self.btn_4.setStyleSheet(u"QPushButton {\n"
 "    background-color: #1E1E1E;\n"
@@ -458,7 +470,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.btn_4, 2, 0, 1, 1)
 
-        self.btn_5 = QPushButton(self.widget)
+        self.btn_5 = QPushButton(self.layoutWidget)
         self.btn_5.setObjectName(u"btn_5")
         self.btn_5.setStyleSheet(u"QPushButton {\n"
 "    background-color: #1E1E1E;\n"
@@ -495,7 +507,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.btn_5, 2, 1, 1, 1)
 
-        self.btn_6 = QPushButton(self.widget)
+        self.btn_6 = QPushButton(self.layoutWidget)
         self.btn_6.setObjectName(u"btn_6")
         self.btn_6.setStyleSheet(u"QPushButton {\n"
 "    background-color: #1E1E1E;\n"
@@ -528,7 +540,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.btn_6, 2, 2, 1, 1)
 
-        self.btn_resta = QPushButton(self.widget)
+        self.btn_resta = QPushButton(self.layoutWidget)
         self.btn_resta.setObjectName(u"btn_resta")
         self.btn_resta.setStyleSheet(u"QPushButton {\n"
 "    background-color: #1E1E1E;\n"
@@ -565,7 +577,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.btn_resta, 2, 3, 1, 1)
 
-        self.btn_1 = QPushButton(self.widget)
+        self.btn_1 = QPushButton(self.layoutWidget)
         self.btn_1.setObjectName(u"btn_1")
         self.btn_1.setStyleSheet(u"QPushButton {\n"
 "    background-color: #1E1E1E;\n"
@@ -602,7 +614,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.btn_1, 3, 0, 1, 1)
 
-        self.btn_2 = QPushButton(self.widget)
+        self.btn_2 = QPushButton(self.layoutWidget)
         self.btn_2.setObjectName(u"btn_2")
         self.btn_2.setStyleSheet(u"QPushButton {\n"
 "    background-color: #1E1E1E;\n"
@@ -639,7 +651,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.btn_2, 3, 1, 1, 1)
 
-        self.btn_3 = QPushButton(self.widget)
+        self.btn_3 = QPushButton(self.layoutWidget)
         self.btn_3.setObjectName(u"btn_3")
         self.btn_3.setStyleSheet(u"QPushButton {\n"
 "    background-color: #1E1E1E;\n"
@@ -676,7 +688,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.btn_3, 3, 2, 1, 1)
 
-        self.btn_suma = QPushButton(self.widget)
+        self.btn_suma = QPushButton(self.layoutWidget)
         self.btn_suma.setObjectName(u"btn_suma")
         self.btn_suma.setStyleSheet(u"QPushButton {\n"
 "    background-color: #1E1E1E;\n"
@@ -713,7 +725,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.btn_suma, 3, 3, 1, 1)
 
-        self.btn_coma = QPushButton(self.widget)
+        self.btn_coma = QPushButton(self.layoutWidget)
         self.btn_coma.setObjectName(u"btn_coma")
         self.btn_coma.setStyleSheet(u"QPushButton {\n"
 "    background-color: #1E1E1E;\n"
@@ -750,7 +762,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.btn_coma, 4, 0, 1, 1)
 
-        self.btn_0 = QPushButton(self.widget)
+        self.btn_0 = QPushButton(self.layoutWidget)
         self.btn_0.setObjectName(u"btn_0")
         self.btn_0.setFont(font4)
         self.btn_0.setStyleSheet(u"QPushButton {\n"
@@ -788,7 +800,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.btn_0, 4, 1, 1, 1)
 
-        self.btn_dividir = QPushButton(self.widget)
+        self.btn_dividir = QPushButton(self.layoutWidget)
         self.btn_dividir.setObjectName(u"btn_dividir")
         self.btn_dividir.setStyleSheet(u"QPushButton {\n"
 "    background-color: #1E1E1E;\n"
@@ -825,7 +837,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.btn_dividir, 4, 2, 1, 1)
 
-        self.btn_multiplicacion = QPushButton(self.widget)
+        self.btn_multiplicacion = QPushButton(self.layoutWidget)
         self.btn_multiplicacion.setObjectName(u"btn_multiplicacion")
         self.btn_multiplicacion.setStyleSheet(u"QPushButton {\n"
 "    background-color: #1E1E1E;\n"
@@ -862,7 +874,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.btn_multiplicacion, 4, 3, 1, 1)
 
-        self.btn_igual = QPushButton(self.widget)
+        self.btn_igual = QPushButton(self.layoutWidget)
         self.btn_igual.setObjectName(u"btn_igual")
         self.btn_igual.setStyleSheet(u"QPushButton {\n"
 "    background-color: #1E1E1E;\n"
@@ -899,7 +911,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.btn_igual, 5, 2, 1, 2)
 
-        self.btn_clear = QPushButton(self.widget)
+        self.btn_clear = QPushButton(self.layoutWidget)
         self.btn_clear.setObjectName(u"btn_clear")
         self.btn_clear.setStyleSheet(u"QPushButton {\n"
 "    background-color: #1E1E1E;\n"

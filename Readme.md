@@ -17,7 +17,7 @@ Este proyecto es una calculadora gráfica desarrollada con PyQt6. La calculadora
 
 ## Uso
 
-1. Ejecuta el archivo [main.py](http://_vscodecontentref_/1) para iniciar la calculadora:
+1. Ejecuta el archivo [main.py](main.py) para iniciar la calculadora:
     ```bash
     python main.py
     ```
@@ -25,13 +25,13 @@ Este proyecto es una calculadora gráfica desarrollada con PyQt6. La calculadora
 
 ## Estructura del Proyecto
 
-- [main.py](http://_vscodecontentref_/2): Contiene la lógica principal de la calculadora.
-- [calculadora.ui](http://_vscodecontentref_/3): Archivo de diseño de la interfaz gráfica creado con Qt Designer.
+- [main.py](main.py): Contiene la lógica principal de la calculadora.
+- [calculadora.ui](calculadora.ui): Archivo de diseño de la interfaz gráfica creado con Qt Designer.
 
 ## Funcionalidades
 
 - **Botones Numéricos**: Permiten ingresar números del 0 al 9.
-- **Operadores**: Suma, resta, multiplicación y división.
+- **Operadores**: Suma, resta, multiplicación, división, porcentaje y raíz cuadrada.
 - **Botón de Igual**: Calcula el resultado de la operación ingresada.
 - **Botón de Borrar Último Número**: Elimina el último carácter ingresado.
 - **Botón de Limpiar**: Limpia toda la pantalla de la calculadora.
@@ -39,8 +39,12 @@ Este proyecto es una calculadora gráfica desarrollada con PyQt6. La calculadora
 - **Historial**: Muestra un historial de las operaciones realizadas.
 - **Botón de Cerrar**: Cierra la aplicación.
 - **Botón de Minimizar**: Minimiza la ventana de la aplicación.
+- **Movimiento de Ventana**: Permite mover la ventana arrastrándola con el ratón.
 
-## Capturas de Pantalla
+## Capturas
 
 ![Captura de Pantalla](/resources/capture.png)
 
+### Demostración
+
+![Demostración de la Calculadora](https://example.com/demo.gif)

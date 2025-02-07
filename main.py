@@ -2,15 +2,27 @@ import sys
 from PyQt6 import uic
 from PyQt6.QtWidgets import *
 from PyQt6.QtCore import Qt 
-from PyQt6.QtGui import QFont
+from PyQt6.QtGui import QIcon
+from PyQt6.QtCore import QTimer
+
 
 class pantalla(QMainWindow):
     def __init__(self):
         super(pantalla, self).__init__()
         uic.loadUi("calculadora.ui", self)
 
+        #! Icono de la aplicacion
+        self.setWindowIcon(QIcon("icons\IconoPPal\ios\AppIcon~ios-marketing.png"))
+
+        #!nombre de la applicacion en ventana "Que no se vera debido a que no hay barra de titulo"
+        self.setWindowTitle("Calculadora")
+
         self.id_operacion = 1  # Contador para el historial
         self.display.setText("0")  # Inicializar el display en 0
+
+        # Establecer el límite de longitud del display
+        self.display.setMaxLength(23)  # Limitar a 23 caracteres
+
 
         #Variables para mover la ventana con el ratón 
         # Esto permite quitar la barra de título
@@ -49,6 +61,9 @@ class pantalla(QMainWindow):
 
     def add_to_display(self, text):
         current = self.display.text()
+        if text == "-" and current == "0":
+            self.display.setText("-")
+
         if current == "0":
             self.display.setText(text)
         else:   
@@ -70,24 +85,43 @@ class pantalla(QMainWindow):
     def calculate(self):
         try:
             operation = self.display.text() # Operacion original.
-            operation_registo = operation
-            operation = self.display.text().replace("√", "**(1/2)")
-            operation = self.display.text().replace("%", "/100")
+            if "√" in operation:
+                operation = operation.replace("√", "**(1/2)")
+            if "%" in operation:
+                operation = operation.replace("%", "/100")
+            #operation = self.display.text().replace("√", "**(1/2)")
+            #operation = self.display.text().replace("%", "/100")
             result = eval(operation)
             self.display.setText(str(result))
-            self.add_to_history(operation_registo, result)
+            self.add_to_history(operation, result)
         except Exception as e:
-            self.show_error("Operación inválida")
-            self.clear_display()
+            self.show_error("Operación no valida")
+            self.display.setText("Syntax Error")
+            #self.clear_display()
+            #! Esto sirve paraestablecer el display con un mensaje de error lo reinicia al segundo limpiando la pantalla.
+            QTimer.singleShot(1000, self.clear_display)
+        except ZeroDivisionError:
+            self.show_error("No se puede dividir por 0")
+            self.display.setText("Math Error")
+            #! Esto sirve paraestablecer el display con un mensaje de error lo reinicia al segundo limpiando la pantalla.
+            QTimer.singleShot(1000, self.clear_display)
+        except ValueError:
+            self.show_error("Operación no valida")
+            self.display.setText("Syntax Error")
+            #! Esto sirve paraestablecer el display con un mensaje de error lo reinicia al segundo limpiando la pantalla.
+            QTimer.singleShot(1000, self.clear_display)
+
 
     def add_to_history(self, operation, result):
         row_position = self.table_history.rowCount()
         self.table_history.insertRow(row_position)
         self.table_history.setItem(row_position, 0, QTableWidgetItem(str(self.id_operacion)))
         self.table_history.setItem(row_position, 1, QTableWidgetItem(operation))
-        self.table_history.setItem(row_position, 2, QTableWidgetItem(str(result)))
-           
-       
+        #! Formatear el resultado a dos decimales
+        # todo: Formatear el resultado a dos decimales Terminar o ver si hay que quitarlo.
+        formatted_result = "{:.2f}".format(result).rjust(8)
+        self.table_history.setItem(row_position, 2, QTableWidgetItem(str(formatted_result)))
+               
         self.id_operacion += 1
 
     def clear_history(self):
