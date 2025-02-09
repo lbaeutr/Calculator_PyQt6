@@ -44,7 +44,3 @@ Este proyecto es una calculadora gráfica desarrollada con PyQt6. La calculadora
 ## Capturas
 
 ![Captura de Pantalla](/resources/capture.png)
-
-### Demostración
-
-![Demostración de la Calculadora](https://example.com/demo.gif)
