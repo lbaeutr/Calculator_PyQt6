@@ -5,7 +5,7 @@ from PyQt6.QtWidgets import *
 from PyQt6.QtCore import Qt 
 from PyQt6.QtGui import QIcon
 from PyQt6.QtCore import QTimer
-from math import factorial, cos, radians
+from math import factorial, cos, radians,sin
 
 
 class pantalla(QMainWindow):
@@ -41,25 +41,28 @@ class pantalla(QMainWindow):
         for i in range(10):
             getattr(self, f"btn_{i}").clicked.connect(lambda _, num=i: self.add_to_display(str(num)))
 
-        # Botones de operadores
+        #! Botones de operadores
         self.btn_suma.clicked.connect(lambda: self.add_to_display("+"))
         self.btn_resta.clicked.connect(lambda: self.add_to_display("-"))
         self.btn_multiplicacion.clicked.connect(lambda: self.add_to_display("*"))
         self.btn_dividir.clicked.connect(lambda: self.add_to_display("/"))
         self.btn_coma.clicked.connect(lambda: self.add_to_display("."))
+        #! Botones de operaciones
         self.btn_parentesis_der.clicked.connect(lambda: self.add_to_display(")"))
         self.btn_parentesis_izq.clicked.connect(lambda: self.add_to_display("("))
         self.btn_raiz.clicked.connect(lambda: self.add_to_display("√"))
         self.btn_porcentaje.clicked.connect(lambda: self.add_to_display("%"))
         self.btn_igual.clicked.connect(self.calculate)
+        #! Botones de borrar
         self.btn_borrar_ultimo_numero.clicked.connect(self.delete_last_character)
         self.btn_clear.clicked.connect(self.clear_display)
         self.btn_clear_history.clicked.connect(self.clear_history)
+        #! Botones de operaciones avanzadas
         self.btn_exp.clicked.connect(lambda: self.add_to_display("^"))
         self.btn_fac.clicked.connect(lambda: self.add_to_display("!"))
         self.btn_cose.clicked.connect(lambda: self.add_to_display("cos("))
-        #! Tenemos que añadir varios botones más que completen la rubrica
-        # Botones de la ventana
+        self.btn_seno.clicked.connect(lambda: self.add_to_display("sin("))
+        #! Botones de la ventana
         self.btn_close.clicked.connect(self.close)
         self.btn_mini.clicked.connect(self.showMinimized)
 
@@ -100,6 +103,9 @@ class pantalla(QMainWindow):
             #! Calcular el COSENO --> Esto lo que hace es buscar el coseno de un número en grados y lo convierte a radianes para calcularlo con la librería math.
             operation = re.sub(r'cos\((-?\d+\.?\d*)\)', lambda m: str(cos(radians(float(m.group(1))))), operation)
 
+            #! Calcular el SENO --> Esto lo que hace es buscar el seno de un número en grados y lo convierte a radianes para calcularlo con la librería math.
+            operation = re.sub(r'sin\((-?\d+\.?\d*)\)', lambda m: str(sin(radians(float(m.group(1))))), operation)
+
             #!  Calcular el resultado de la operación --> Funciona con la función eval() que evalúa una expresión en forma de cadena y devuelve el resultado.
             result = eval(operation, {"__builtins__": None}, {})
 
@@ -135,6 +141,7 @@ class pantalla(QMainWindow):
         self.table_history.setRowCount(0)
         self.id_operacion = 1
 
+    #! Funcion para mostrar mensajes de error
     def show_error(self, message):
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Icon.Critical)
@@ -142,11 +149,11 @@ class pantalla(QMainWindow):
         msg.setText(message)
         msg.exec()
     
-    # Eventos para mover la ventana con el ratón
+    #! Eventos para mover la ventana con el ratón
     def mousePressEvent(self, event):
         if event.button() == Qt.MouseButton.LeftButton:
             self.old_pos = event.globalPosition().toPoint()
-
+    
     def mouseMoveEvent(self, event):
         if self.old_pos is not None:
             delta = event.globalPosition().toPoint() - self.old_pos
