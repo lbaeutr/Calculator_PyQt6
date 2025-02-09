@@ -4,6 +4,7 @@ from PyQt6.QtWidgets import *
 from PyQt6.QtCore import Qt 
 from PyQt6.QtGui import QIcon
 from PyQt6.QtCore import QTimer
+from math import factorial
 
 
 class pantalla(QMainWindow):
@@ -53,6 +54,8 @@ class pantalla(QMainWindow):
         self.btn_borrar_ultimo_numero.clicked.connect(self.delete_last_character)
         self.btn_clear.clicked.connect(self.clear_display)
         self.btn_clear_history.clicked.connect(self.clear_history)
+        self.btn_exp.clicked.connect(lambda: self.add_to_display("^"))
+        self.btn_fac.clicked.connect(lambda: self.add_to_display("!"))
         #! Tenemos que añadir varios botones más que completen la rubrica
         # Botones de la ventana
         self.btn_close.clicked.connect(self.close)
@@ -89,9 +92,15 @@ class pantalla(QMainWindow):
                 operation = operation.replace("√", "**(1/2)")
             if "%" in operation:
                 operation = operation.replace("%", "/100")
+            if "^" in operation:
+                operation = operation.replace("^", "**")
+            if "!" in operation:
+                operation = operation.replace("!", "")
+                result = factorial(int(operation))
+            else:
             #operation = self.display.text().replace("√", "**(1/2)")
             #operation = self.display.text().replace("%", "/100")
-            result = eval(operation)
+             result = eval(operation, {"__builtins__": None}, {"factorial": factorial})
             self.display.setText(str(result))
             self.add_to_history(operation, result)
         except Exception as e:
@@ -103,12 +112,10 @@ class pantalla(QMainWindow):
         except ZeroDivisionError:
             self.show_error("No se puede dividir por 0")
             self.display.setText("Math Error")
-            #! Esto sirve paraestablecer el display con un mensaje de error lo reinicia al segundo limpiando la pantalla.
             QTimer.singleShot(1000, self.clear_display)
         except ValueError:
             self.show_error("Operación no valida")
             self.display.setText("Syntax Error")
-            #! Esto sirve paraestablecer el display con un mensaje de error lo reinicia al segundo limpiando la pantalla.
             QTimer.singleShot(1000, self.clear_display)
 
 
