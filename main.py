@@ -1,10 +1,11 @@
 import sys
+import re #! Importacion para remplazos avanzados
 from PyQt6 import uic
 from PyQt6.QtWidgets import *
 from PyQt6.QtCore import Qt 
 from PyQt6.QtGui import QIcon
 from PyQt6.QtCore import QTimer
-from math import factorial
+from math import factorial, cos, radians
 
 
 class pantalla(QMainWindow):
@@ -56,6 +57,7 @@ class pantalla(QMainWindow):
         self.btn_clear_history.clicked.connect(self.clear_history)
         self.btn_exp.clicked.connect(lambda: self.add_to_display("^"))
         self.btn_fac.clicked.connect(lambda: self.add_to_display("!"))
+        self.btn_cose.clicked.connect(lambda: self.add_to_display("cos("))
         #! Tenemos que añadir varios botones más que completen la rubrica
         # Botones de la ventana
         self.btn_close.clicked.connect(self.close)
@@ -87,36 +89,34 @@ class pantalla(QMainWindow):
 
     def calculate(self):
         try:
-            operation = self.display.text() # Operacion original.
-            if "√" in operation:
-                operation = operation.replace("√", "**(1/2)")
-            if "%" in operation:
-                operation = operation.replace("%", "/100")
-            if "^" in operation:
-                operation = operation.replace("^", "**")
-            if "!" in operation:
-                operation = operation.replace("!", "")
-                result = factorial(int(operation))
-            else:
-            #operation = self.display.text().replace("√", "**(1/2)")
-            #operation = self.display.text().replace("%", "/100")
-             result = eval(operation, {"__builtins__": None}, {"factorial": factorial})
+            operation = self.display.text()  # Obtener la operación ingresada
+
+            #! Remplazar los símbolos matemáticos por los que Python entiende y puede calcular. --> Operaciones : √, %, ^, !
+            operation = operation.replace("√", "**(1/2)").replace("%", "/100").replace("^", "**")
+
+            #! Calcular el FACTORIAL --> Esto lo que hace es buscar un número seguido de un signo de exclamación y calcula el factorial de ese número con la librería math.
+            operation = re.sub(r'(\d+)!', lambda m: str(factorial(int(m.group(1)))), operation)
+
+            #! Calcular el COSENO --> Esto lo que hace es buscar el coseno de un número en grados y lo convierte a radianes para calcularlo con la librería math.
+            operation = re.sub(r'cos\((-?\d+\.?\d*)\)', lambda m: str(cos(radians(float(m.group(1))))), operation)
+
+            #!  Calcular el resultado de la operación --> Funciona con la función eval() que evalúa una expresión en forma de cadena y devuelve el resultado.
+            result = eval(operation, {"__builtins__": None}, {})
+
+
             self.display.setText(str(result))
             self.add_to_history(operation, result)
-        except Exception as e:
-            self.show_error("Operación no valida")
-            self.display.setText("Syntax Error")
-            #self.clear_display()
-            #! Esto sirve paraestablecer el display con un mensaje de error lo reinicia al segundo limpiando la pantalla.
-            QTimer.singleShot(1000, self.clear_display)
+
         except ZeroDivisionError:
             self.show_error("No se puede dividir por 0")
             self.display.setText("Math Error")
             QTimer.singleShot(1000, self.clear_display)
-        except ValueError:
-            self.show_error("Operación no valida")
+
+        except Exception:
+            self.show_error("Operación no válida")
             self.display.setText("Syntax Error")
             QTimer.singleShot(1000, self.clear_display)
+
 
 
     def add_to_history(self, operation, result):
