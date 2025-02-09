@@ -92,13 +92,15 @@ class pantalla(QMainWindow):
 
     def calculate(self):
         try:
-            operation = self.display.text()  # Obtener la operación ingresada
+            original_operation = self.display.text()  # Obtener la operación ingresada
+            operation = original_operation # Copiar la operación original para mostrarla en el historial
 
             #! Remplazar los símbolos matemáticos por los que Python entiende y puede calcular. --> Operaciones : √, %, ^, !
             operation = operation.replace("√", "**(1/2)").replace("%", "/100").replace("^", "**")
 
             #! Calcular el FACTORIAL --> Esto lo que hace es buscar un número seguido de un signo de exclamación y calcula el factorial de ese número con la librería math.
             operation = re.sub(r'(\d+)!', lambda m: str(factorial(int(m.group(1)))), operation)
+
 
             #! Calcular el COSENO --> Esto lo que hace es buscar el coseno de un número en grados y lo convierte a radianes para calcularlo con la librería math.
             operation = re.sub(r'cos\((-?\d+\.?\d*)\)', lambda m: str(cos(radians(float(m.group(1))))), operation)
@@ -111,7 +113,7 @@ class pantalla(QMainWindow):
 
 
             self.display.setText(str(result))
-            self.add_to_history(operation, result)
+            self.add_to_history(original_operation, result)
 
         except ZeroDivisionError:
             self.show_error("No se puede dividir por 0")
