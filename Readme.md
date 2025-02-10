@@ -27,6 +27,10 @@ Este proyecto es una calculadora gráfica desarrollada con PyQt6. La calculadora
 
 - [main.py](main.py): Contiene la lógica principal de la calculadora.
 - [calculadora.ui](calculadora.ui): Archivo de diseño de la interfaz gráfica creado con Qt Designer.
+- [calculadora.spec](calculadora.spec): Archivo de especificaciones para PyInstaller.
+- [calculadora_ui.py](calculadora_ui.py): Archivo generado automáticamente por pyuic6 a partir de `calculadora.ui`.
+- [icons/](icons/): Carpeta que contiene los iconos utilizados en la aplicación.
+- [resources/](resources/): Carpeta que contiene recursos adicionales como capturas de pantalla y GIFs de funcionamiento.
 
 ## Funcionalidades
 
